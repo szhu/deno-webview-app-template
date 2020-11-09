@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+    </style>
+  </head>
+  <body>
+    <pre>Hello from ui.html!</pre>
+    <button id="testApiButton">Test the API!</button>
+    <pre id="out1"></pre>
+  </body>
+  <script>
+    async function testApi() {
+      testButton.disabled = true;
+      let response = await fetch(".", { method: "POST" });
+      let text = await response.text();
+      document.getElementById("out1").innerText = text;
+      testButton.disabled = false;
+    }
+
+    let testButton = document.getElementById("testApiButton");
+    testButton.addEventListener("click", testApi);
+  </script>
+</html>

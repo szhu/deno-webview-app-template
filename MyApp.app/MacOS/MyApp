@@ -1,0 +1,3 @@
+#!/bin/sh
+cd "$(dirname "$0")"/../..
+DENO_DIR=deno_dir /usr/local/bin/deno run -A --unstable --no-check src/app.ts --ui
